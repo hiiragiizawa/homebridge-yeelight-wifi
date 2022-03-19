@@ -120,12 +120,6 @@ class YeePlatform {
     const mixins = [];
     const family = Object.values(MODELS).find(fam => model.startsWith(fam));
 
-    // Lamps that support moonlight mode
-    if ([MODELS.CEILING, MODELS.LAMP].includes(family)) {
-      this.log(`Device ${name} supports moonlight mode`);
-      mixins.push(MoonlightMode);
-    }
-
     if (features.includes('set_bright')) {
       this.log(`Device ${name} supports brightness`);
       mixins.push(Brightness);
